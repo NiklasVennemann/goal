@@ -16,12 +16,7 @@ export class GoalComponent implements OnInit {
     // var goalElement = document.registerElement('app-goal');
     // document.body.appendChild(new goalElement());
     let newGoal = document.createElement("app-goal");
-    let newDiv = document.createElement("div");
-    newDiv.setAttribute("id","111");
-    let newDivText = document.createTextNode("Hi there and greetings!"); 
-    newDiv.appendChild(newDivText);
     newGoal.setAttribute("id", "999");
-    newGoal.appendChild(newDiv);
     // let newGoalText = document.createTextNode("Hi there and greetings!"); 
     // newGoal.appendChild(newGoalText);
     let currentGoal = document.getElementById(currentGoalID.toString());
