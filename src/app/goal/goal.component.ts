@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GoalService } from '../goal.service';
 
 @Component({
   selector: 'app-goal',
@@ -8,12 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class GoalComponent implements OnInit {
   @Input() id : number;
   lowerGoals: Array<any> = [];
-  constructor() { }
+  constructor(private goalService: GoalService) { }
 
   ngOnInit() {
   }
-  onAddLowerGoal(currentGoalID:number){
-    this.lowerGoals.push({id: currentGoalID});
+  onAddLowerGoal(){
+    this.lowerGoals.push({id: this.goalService.nextID});
+    this.goalService.incrementID();
     console.log("onAddLowerGoal()");
     console.log(this.lowerGoals);
     // var goalElement = document.registerElement('app-goal');

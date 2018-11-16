@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { GoalService } from '../goal.service';
 
 @Component({
   selector: 'app-goals',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./goals.component.scss']
 })
 export class GoalsComponent implements OnInit {
-  lastGivenId: number = 0;
-  constructor() { }
+  nextID: number = 0;
+  inputContent: string = "Ich brauche einen Laptop für maximal 1000 Euro.";
+  constructor(private goalService: GoalService) { }
 
   ngOnInit() {
+    // if(true){alert("ngOnInit()");}
   }
 
 }

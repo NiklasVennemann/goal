@@ -1,5 +1,5 @@
 <div id="{{id}}" class="goal">goal{{id}}</div>
-<button id="AddLowerGoal1" (click)="onAddLowerGoal(999)">+</button>
+<button id="AddLowerGoal{{id}}" class="addLowerGoal" (click)="onAddLowerGoal()">+</button>
 <div style="margin-left: 5px" *ngFor="let lowerGoal of lowerGoals">
     <app-goal [id]="lowerGoal.id"></app-goal>
 </div>
